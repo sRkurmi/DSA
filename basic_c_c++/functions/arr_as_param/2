@@ -1,0 +1,24 @@
+/*In this program we will see the how pass the array as the parameter in the function 
+
+facts----> we can not use the for each loop upon a pointer but can be used on an array within a same function*/
+
+#include<iostream>
+#include<stdio.h>
+
+using namespace std;
+
+int fun(int A[], int n)
+{
+	for(int i = 0; i < n; i++)
+		cout<<A[i]<<endl;
+	return 0;
+}
+int main()
+{
+	int A[] = {2,3,4,5,6};
+	
+	int n = 5;//this is the number of the element or length of the array
+	
+	fun(A,n);
+
+}
