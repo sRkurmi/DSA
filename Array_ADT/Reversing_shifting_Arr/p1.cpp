@@ -16,12 +16,24 @@ struct Array
 
 };
 
+void swap(int *x, int *y)
+{
+	int temp;
+
+	temp = *x;
+
+	*x = *y;
+
+	*y = temp;	
+}
 void display(struct Array arr)
 {
 	for(int i = 0; i < arr.length; i++)
 		cout<<arr.A[i]<<" ";
 
 }
+
+/* given below is the implementation of the Reverse function to reverse the array using auxilary array */
 void Reverse(struct Array *arr)
 {
 	int *B;// this is pointer to take aux array inside the heap
@@ -38,11 +50,24 @@ void Reverse(struct Array *arr)
 
 }
 
+/* Given below is the implementation of the Reverse function using the swap function */
+void Reverse2(struct Array *arr)
+{
+	int i, j;
+	for(i = 0,j = arr->length; i>j; i++,j--)
+		{
+		swap(&arr->A[i],&arr->A[j]);
+		}
+}
 int main()
 {
 	struct Array arr = {{2,3,4,5,6},10,5};
 	
 	Reverse(&arr);
+	display(arr);
+	cout<<endl;
+
+	Reverse2(&arr);
 	display(arr);
 	cout<<endl;
 	return 0;
