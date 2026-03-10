@@ -3,7 +3,7 @@
 #include<stdlib.h>
 
 using namespace std;
-/* In this example code we will the implementation of the linear search and improvement in the linear search */
+/* In this example code we will the implementation of the linear search  */
 
 struct Array
 {
