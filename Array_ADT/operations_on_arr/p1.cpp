@@ -46,20 +46,34 @@ int max(struct Array arr)
 	int max = arr.A[0];
 	for(int i = 0; i < arr.length; i++)
 		{
-			if(max < arr.A[i])
+			if( arr.A[i] > max )
 				max = arr.A[i];
 		}
 	return max;
 }
+
+/* Given Below is the implementation of the min function the minimu value inside the Array */
+int min(struct Array arr)
+{
+	int min = arr.A[0];
+
+	for(int i = 0; i < arr.length; i++)
+	{
+		if(arr.A[i] < min)
+			min = arr.A[i];
+	}
+	return min;
+}
 int main()
 {
-	struct Array arr = {{-2,-3,-4,-5,-6},10,5};
+	struct Array arr = {{2,3,4,5,6},10,5};
 	cout<<"Given below is the array we kept"<<endl;
 	display(arr);
 	cout<<endl;
-	cout<<"Get fun call value at index 2 = "<<Get(arr,2)<<endl;// this is the function call for get function
-	cout<<"the new value by set func = "<<set(&arr,0,-1)<<endl;
+	cout<<"Get fun call value at index 2nd = "<<Get(arr,2)<<endl;// this is the function call for get function
+	cout<<"the new value by set func = "<<set(&arr,4,-1)<<endl;
 	cout<<"The maximum value inside the array is = "<<max(arr)<<endl;
+	cout<<"The minimum value inside the array is = "<<min(arr)<<endl;
 	cout<<"The changed Array is given below"<<endl;
 	display(arr);
 	cout<<endl;
