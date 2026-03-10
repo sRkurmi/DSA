@@ -42,7 +42,7 @@ int main()
 {
 	struct Array arr = {{2,3,4,5,6},10,5};// this initialization of the array
 	
-	cout<<RBinsearch(arr.A,0,arr.length-1,3)<<endl;
+	cout<<RBinsearch(arr.A,0,arr.length,6)<<endl;
 	display(arr);
 	cout<<endl;
 	return 0;
