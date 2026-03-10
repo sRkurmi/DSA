@@ -4,7 +4,7 @@
 
 using namespace std;
 
-/*In this program we will see the improvement in the linear search */
+/*In this program we will see the improvement in the linear search  at one position of the current position of the index and at the head position */
 
 struct Array 
 {
@@ -33,7 +33,7 @@ int linearsearch(struct Array *arr, int key)
 		{
 		/* below we are calling the swap function to perform the transposition */
 
-		swap(&arr->A[i], &arr->A[i-1]);//this interchange the element to the one position before current position of the key so in the next seach we will find the element one move before
+		swap(&arr->A[i], &arr->A[0]);//this interchange the element and alway keep the found key at 0th position or head position 
 		return i;
 		}
 	}
@@ -49,7 +49,7 @@ int main()
 {	
 	struct Array arr = {{2,3,4,5,6},10,5};
 
-	cout<<linearsearch(&arr,6)<<endl;
+	cout<<linearsearch(&arr,5)<<endl;
 	display(arr);
 	cout<<endl;
 	return 0;
