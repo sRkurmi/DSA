@@ -64,6 +64,18 @@ int min(struct Array arr)
 	}
 	return min;
 }
+
+/* Given below is the implementation of the sum function to find out the sum of the element */
+int sum(struct Array arr)
+{
+	int s = 0;
+
+	for(int i = 0; i < arr.length; i++)
+	{
+		s += arr.A[i];
+	}
+	return s;
+}
 int main()
 {
 	struct Array arr = {{2,3,4,5,6},10,5};
@@ -74,6 +86,7 @@ int main()
 	cout<<"the new value by set func = "<<set(&arr,4,-1)<<endl;
 	cout<<"The maximum value inside the array is = "<<max(arr)<<endl;
 	cout<<"The minimum value inside the array is = "<<min(arr)<<endl;
+	cout<<"The sum of all the element of the Array is = "<<sum(arr)<<endl;
 	cout<<"The changed Array is given below"<<endl;
 	display(arr);
 	cout<<endl;
