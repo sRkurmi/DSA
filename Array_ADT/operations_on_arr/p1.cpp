@@ -76,9 +76,16 @@ int sum(struct Array arr)
 	}
 	return s;
 }
+
+/* Below is the implementation of the Average function the find out total average of array's element */
+float Avg(struct Array arr)
+{
+	return (float) sum(arr)/arr.length;
+}
+
 int main()
 {
-	struct Array arr = {{2,3,4,5,6},10,5};
+	struct Array arr = {{23,3,14,25,6},10,5};
 	cout<<"Given below is the array we kept"<<endl;
 	display(arr);
 	cout<<endl;
@@ -87,6 +94,7 @@ int main()
 	cout<<"The maximum value inside the array is = "<<max(arr)<<endl;
 	cout<<"The minimum value inside the array is = "<<min(arr)<<endl;
 	cout<<"The sum of all the element of the Array is = "<<sum(arr)<<endl;
+	cout<<"The Average of the array's element is = "<<Avg(arr)<<endl;
 	cout<<"The changed Array is given below"<<endl;
 	display(arr);
 	cout<<endl;
