@@ -39,13 +39,23 @@ void Insertsort(struct Array *arr, int x)
 		arr->A[i+1] = x;
 		arr->length++;
 }
+int Issorted( struct Array arr)
+{	int i;
+	for(i = 0; i < arr.length-1; i++)
+	{
+		if(arr.A[i] > arr.A[i+1])
+		return 0;
+	}
+	return 1;
+}
 int main()
 {	 
-	struct Array arr = {{2,3,5,10,15},10,5};
+	struct Array arr = {{2,3,25,10,15},10,5};
 	cout<<"The Array list before inserting the element"<<endl;
 	display(arr);
 	Insertsort(&arr,4);
 	cout<<"After inserting the element the Array list is"<<endl;
+	cout<<"Issorted Return "<<Issorted(arr)<<endl;
 	display(arr);
 	return 0;
 }
