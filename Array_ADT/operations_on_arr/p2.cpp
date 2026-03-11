@@ -14,7 +14,16 @@ struct Array
 
 	int length;
 };
+void swap(int *x, int *y)
+{
+	int temp;
 
+	temp = *x;
+
+	*x = *y;
+
+	*y = temp;
+}
 void display(struct Array arr)
 {
 	for(int i = 0; i < arr.length; i++)
@@ -48,14 +57,31 @@ int Issorted( struct Array arr)
 	}
 	return 1;
 }
+/* In this function we will implement the functionality to Arrange the positive and negative either side of the Array */
+void Rearrange(struct Array *arr)
+{
+	int i = 0, j;
+	j = arr->length-1;
+	while(i < j)
+	{
+	while(arr->A[i]<0) i++;
+	while(arr->A[j]>=0) j--;
+	if(i < j){
+		swap(&arr->A[i],&arr->A[j]);
+		}
+	}
+}
+
 int main()
 {	 
-	struct Array arr = {{2,3,25,10,15},10,5};
-	cout<<"The Array list before inserting the element"<<endl;
+	struct Array arr = {{2,-3,25,10,-15,-7},10,6};
+//	cout<<"The Array list before inserting the element"<<endl;
 	display(arr);
-	Insertsort(&arr,4);
-	cout<<"After inserting the element the Array list is"<<endl;
+//	Insertsort(&arr,4);
+//	cout<<"After inserting the element the Array list is"<<endl;
 	cout<<"Issorted Return "<<Issorted(arr)<<endl;
+	cout<<"Rearranged Array is given below"<<endl;
+	Rearrange(&arr);
 	display(arr);
 	return 0;
 }
