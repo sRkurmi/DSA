@@ -4,10 +4,14 @@ using namespace std;
 
 /*In this program we will see the c++ code */
 
+/* now we are making generic code so that it can work for all type of the array,  means we are creating the tempalate */
+
+template <class T>
+
 class Array
 {
 private:
-	int *A;
+	T *A;
 	
 	int size;
 
@@ -17,14 +21,14 @@ public:
 	{
 		 size = 10;
 	
-		A = new int[10];
+		A = new T[10];
 
 		length = 0;
 	}
 	Array(int sz)
 	{
 		 size = sz;
-		A = new int[size];
+		A = new T[size];
 		length = 0;
 	}
 	~Array()// this is the destructor 
@@ -33,17 +37,21 @@ public:
 	}
 	
 	void Display();
-	void Insert(int index, int x);
-	int Delete(int index);
-};
+	void Insert(int index, T x);
+	T Delete(int index);
+};// class ends here so template will also end 
 
-void Array::Display()
+template <class T>
+
+void Array<T>::Display()
 {
 	for(int i = 0; i < length; i++)
 		cout<<A[i]<<" ";
 	cout<<endl;
 }
-void Array::Insert(int index, int x)
+
+template <class T>
+void Array<T>::Insert(int index, T x)
 {
 	if(index >= 0 && index <= length)
 	{
@@ -53,9 +61,11 @@ void Array::Insert(int index, int x)
 		length++;
 	}
 }
-int Array:: Delete(int index)
+
+template <class T>
+T Array<T>:: Delete(int index)
 {	
-	int x = 0;
+	T x = 0;
 	
 	if(index >= 0 && index < length)
 	{	
@@ -70,10 +80,10 @@ int Array:: Delete(int index)
 
 int main()
 {
-	Array arr(10);
-	arr.Insert(0,5);
-	arr.Insert(1,6);
-	arr.Insert(2,9);
+	Array<char> arr(10);// here in this line we have mentioned that i am goig to use the char type data
+	arr.Insert(0,'a');
+	arr.Insert(1,'c');
+	arr.Insert(2,'d');
 	arr.Display();
 	
 	cout<<"The deleted element is = "<<arr.Delete(0)<<endl;
